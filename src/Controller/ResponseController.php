@@ -22,7 +22,7 @@ class ResponseController
     }
 
     #[Route('/private/{login}', name: 'private')]
-    public function private(string $login) : Response
+    public function private(string $login) : Response   // avec recupération d"un parametre directement dans la requete
     {
         return new Response('<h2>Bienvenue ' . $login . ' !</h2>');
     }

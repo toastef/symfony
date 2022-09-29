@@ -1,0 +1,27 @@
+{# commentaire en twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container pt-3 ">
+    <table>
+        <thead>
+        <tr>
+            <td>Num</td>
+            <td>Role</td>
+            <td>Name</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for role, name in team %}  {# tableau indéxé, récupération des 2 elements du tab  #}
+            <tr>
+                <td>{{ loop.index }}</td> {#  variable twig qui compte le nombre d'element lorsque l'on va faire une boucle  #}
+                <td>{{ role }}</td>
+                <td>{{ name|upper }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+{% endblock %}
